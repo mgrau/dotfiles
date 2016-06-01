@@ -3,4 +3,6 @@ To use in windows
 * put .vim in C:\Users\USERNAME\vimfiles
 
 To use in linux
-
+* git pull
+* ln -s dotfiles/.vim ~/.vim
+* ln -s dotfiles/.vimrc ~/.vimrc
