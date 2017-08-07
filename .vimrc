@@ -1,14 +1,14 @@
 " Matt Grau
 " General {{{
 set nocompatible            " we don't care about VI compatibility
-set spell                   " turn on spellcheck
-set history=1000            " increase history from default of 20
-execute pathogen#infect()
+set spell                   " turn spellcheck on
+call pathogen#infect()
+call pathogen#helptags()
 " }}}
 " Colors {{{
-colorscheme molokai         " textmate colorscheme
-set background=dark         " makes the background dark
-syntax enable               " enable syntax highlighting
+colorscheme molokai           " textmate colorscheme
+highlight Comment cterm=bold
+syntax enable
 "}}}
 " Spaces & Tabs {{{
 set autoindent              " indent at same level as previous line
@@ -23,10 +23,9 @@ set number                  " turn on line numbers
 set cursorline              " highlight current line
 set showcmd                 " show command in bottom bar
 set wildmenu                " visual autocomplete for command menu
-set wildmode=list:longest,full   " command <Tab> completion, list matches, then longest common part, then all
 set lazyredraw              " redraw only when needed
 set showmatch               " highlight matching braces
-set showmode                " display current mode
+" set guifont=DejaVu\ Sans:s12
 " }}}
 " Search {{{
 set ignorecase              " ignore case
@@ -41,20 +40,30 @@ set foldnestmax=10          " 10 nexted folds max
 set foldmethod=indent       " fold based on indent level
 " }}}
 " Mouse {{{
-set mouse=a                 " automatically enable mouse
-set scrolljump=5            " lines to scroll
-nmap ; : "re
+set mouse=a                 " enable mouse uatomatically
+nmap ; : "re    
 " }}}
-" MATLAB {{{
-map <leader>r :w<CR>:!/Applications/MATLAB_R2014b.app/bin/matlab -nodesktop -nosplash -r "try, run %:p, pause, catch, end, quit" <CR> <CR>
-autocmd BufEnter *.m compiler mlint 
-" }}} 
+" Airline {{{
+let g:airline_powerline_fonts=1
+let g:airline_theme='molokai'
+" }}}
 " Custom Keymaps {{{
 imap // <esc>
 nmap ; :
 nmap <space> i
-nnoremap gV `[v`]
+nnoremap gV '[v']
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>rv :so $MYVIMRC<CR>
 nnoremap <leader>= mzgg=G'z<CR>
+
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<CR>
+nnoremap <F5> :UndotreeToggle<CR>
 " }}}
-" vim:foldmethod=marker:foldlevel=0
+"L vim:foldmethod=marker:foldlevel=0
