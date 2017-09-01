@@ -55,7 +55,6 @@ nnoremap gV '[v']
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>rv :so $MYVIMRC<CR>
 nnoremap <leader>= mzgg=G'z<CR>
-
 function! NumberToggle()
     if(&relativenumber == 1)
         set norelativenumber
