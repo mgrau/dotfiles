@@ -1,7 +1,7 @@
 " Matt Grau
 " General {{{
 set nocompatible            " we don't care about VI compatibility
-set spell                   " turn spellcheck on
+" set spell                   " turn spellcheck on
 call pathogen#infect()
 call pathogen#helptags()
 " }}}
