@@ -48,7 +48,6 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 " }}}
 " Custom Keymaps {{{
-imap // <esc>
 nmap ; :
 nmap <space> i
 nnoremap gV '[v']
