@@ -3,8 +3,10 @@
 These are some of the settings I like to carry around with me to terminals I spend more than a few minutes working in. Currently it's just some .vimrc settings I enjoy and also a script to clone some of tpope's excellent vim add-ons
 
 ## Linux Installation
+```sh
 git clone https://github.com/mgrau/dotfiles
 ./dotfiles/install.sh
+```
 
 This does the following
 * moves the repo to ~/.dotfiles
